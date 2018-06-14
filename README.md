@@ -1,6 +1,6 @@
 # API Shell App
 
-Ruby on Rails shell application with a REST API. 
+Ruby on Rails shell application with a REST API.
 
 ### Versions
 
@@ -14,9 +14,13 @@ Uses ruby 2.4 and rails 5.2 (not pre-req's on host laptop).
 
 ### Instructions
 
+##
+
 1. `docker-compose build` to build the docker containers (also installs gems).
 
-2. `docker-compose up` to startup the app the first time, then in a 2nd terminal run `docker-compose run web rake db:create` to create the database.
+2. `docker-compose up` to startup the app the first time.
+
+3. In a 2nd terminal run `docker-compose run web rails db:create` to create the database. Then run `docker-compose run web rails db:seed` to seed the DB with some example data.
 
 ## Local Development (general)
 
