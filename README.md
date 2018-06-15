@@ -2,6 +2,8 @@
 
 Ruby on Rails shell application with a REST API.
 
+[![CircleCI](https://circleci.com/gh/STSILABS/ruby-api-shell.svg?style=svg)](https://circleci.com/gh/STSILABS/ruby-api-shell)
+
 ### Versions
 
 Uses ruby 2.4 and rails 5.2 (not pre-req's on host laptop).
@@ -28,9 +30,11 @@ Uses ruby 2.4 and rails 5.2 (not pre-req's on host laptop).
 
  * Stop: `docker-compose down` - (i.e. in separate terminal window) and *not using CTRL-C*.
 
- * Command line: to access the web server command line, preface any commands with `docker-compose run web`, e.g. `docker-compose run web rails generate rspec:install`. You can alternatively access the container shell directly `docker-compose run web bash`.
+ * Command line: to access the web server command line, preface any commands with `docker-compose run web`, e.g. `docker-compose run web rails generate rspec:install`. You can alternatively access the container shell directly `docker-compose run web bash`. *The following commands omit the docker-compose run web prefix.*
 
- * Run tests: `docker-compose run web rspec`
+ * Run tests: `rspec` - You can also specify a path to run a subset of tests at the folder, file or line number level.
+
+ * Run brakeman (static vulnerability scan): `brakeman` -  See [options on docs page](https://github.com/presidentbeef/brakeman#basic-options) for CI-relevant reporting & file output.
 
 ### Notes
 
