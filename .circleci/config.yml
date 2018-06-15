@@ -45,8 +45,7 @@ jobs:
       - run:
           name: run vulnerability scan
           command: |
-            mkdir /tmp/brakeman-results
-            bundle exec brakeman -o /tmp/brakeman-results/output.json
+            bundle exec brakeman -o /tmp/test-results/output.json
 
       # run tests!
       - run:
