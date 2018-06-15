@@ -40,6 +40,13 @@ jobs:
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
 
+      # scan for vulnerability
+      - run:
+          name: run vulnerability scan
+          command: |
+            mkdir /tmp/brakeman-results
+            bundle exec brakeman -o /tmp/brakeman-results/output.json
+
       # run tests!
       - run:
           name: run tests
