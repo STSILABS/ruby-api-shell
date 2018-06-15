@@ -2,6 +2,8 @@
 
 Ruby on Rails shell application with a REST API.
 
+[![CircleCI](https://circleci.com/gh/STSILABS/ruby-api-shell.svg?style=svg)](https://circleci.com/gh/STSILABS/ruby-api-shell)
+
 ### Versions
 
 Uses ruby 2.4 and rails 5.2 (not pre-req's on host laptop).
