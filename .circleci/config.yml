@@ -52,7 +52,7 @@ jobs:
       # scan for quality
       - run:
           name: run quality scan
-          command: bundle exec rubocop --out /tmp/test-results/rubocop.json --format json
+          command: bundle exec rubocop -o /tmp/test-results/rubocop.json -f json
 
       # run tests!
       - run:
