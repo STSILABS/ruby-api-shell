@@ -47,7 +47,6 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
-
   config.include RequestSpecHelper, type: :request
 
   # RSpec Rails can automatically mix in different behaviours to your tests
