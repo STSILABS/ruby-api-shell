@@ -41,12 +41,18 @@ jobs:
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
 
+      # setup test result directory
+      - run: mkdir /tmp/test-results
+
       # scan for vulnerability
       - run:
           name: run vulnerability scan
-          command: |
-            mkdir /tmp/test-results
-            bundle exec brakeman -o /tmp/test-results/output.json
+          command: bundle exec brakeman -o /tmp/test-results/brakeman.json
+
+      # scan for quality
+      - run:
+          name: run quality scan
+          command: bundle exec rubocop --out /tmp/test-results/rubocop.json --format json
 
       # run tests!
       - run:
