@@ -36,6 +36,10 @@ Uses ruby 2.4 and rails 5.2 (not pre-req's on host laptop).
 
  * Run brakeman (static vulnerability scan): `brakeman` -  See [options on docs page](https://github.com/presidentbeef/brakeman#basic-options) for CI-relevant reporting & file output.
 
+ * Run rubocop (static code style analysis): `rubocop` -  See [docs page](https://github.com/rubocop-hq/rubocop) for rule tweaking, with some in the `.rubocop.yml` file.
+
+ * Run everything: `rake test` to run all test & scans in one fell swoop.
+
 ### Notes
 
  * If you need to change the port for the local machine, you can update the docker-compose.yml file. For example `- "3001:3000"` will map the rails server (3000) to 3001 in the local dev machine.
