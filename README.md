@@ -56,21 +56,21 @@ The below example steps create a sample API for conference rooms.
 
 ### Generate database-backed model
 
-__Generate model__: `rails g model Room title:string building:string capacity:integer` - creates database migration script, model file, model unit tests.
+__Generate model__: e.g. `rails g model Room title:string building:string capacity:integer` - creates database migration script, model file, model unit tests.
 
 __Migrate database__: `rails db:migrate` - note that this updates the `/db/schema.rb` file which is a useful reference of the database-backed models.
 
-__Update unit tests__: edit respective file(s) in `/spec/models/`.
+__Update unit tests__: edit respective file(s) in `/spec/models/`. For example, adding [tests to expect validation for required fields](https://github.com/STSILABS/ruby-api-shell/blob/bb252e37fd8c92913e8635aea35a01523e732e69/spec/models/room_spec.rb#L5) 
 
 __Run (failing) tests__: `rspec`
 
-__Write code__: in this case, under `app/models/`
+__Write code__: in this case, under `app/models/`. For example, adding [validation for required fields](https://github.com/STSILABS/ruby-api-shell/blob/bb252e37fd8c92913e8635aea35a01523e732e69/app/models/room.rb#L2).
 
 ### Generate REST API controller
 
 __Generate controller__: `rails g controller Rooms` - this generates the controller and unit tests. However, we'll *delete the controller specs*. We'll use request specs instead. `rm -rf /spec/controllers/`
 
-__Create request spec__: `mkdir spec/requests && touch spec/requests/rooms_spec.rb`
+__Create request spec__: `mkdir spec/requests && touch spec/requests/rooms_spec.rb`. 
 
 __Create factories__: `touch spec/factories/rooms.rb` - needed for any new model
 
