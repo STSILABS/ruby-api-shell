@@ -20,7 +20,7 @@ Uses ruby 2.4 and rails 5.2 (not pre-req's on host laptop).
 
 2. `docker-compose up` to startup the app the first time.
 
-3. In a 2nd terminal run `docker-compose run web rails db:create` to create the database. Then run `docker-compose run web rails db:seed` to seed the DB with some example data.
+3. In a 2nd terminal run `docker-compose run web rails db:create` to create the database, then `docker-compose run web rails db:migrate`. Then run `docker-compose run web rails db:seed` to seed the DB with some example data.
 
 4. Run `docker-compose up` to start the app. You should see data being served at http://localhost:3001/rooms
 
